@@ -5,7 +5,6 @@ function Wrapper() {
   const [counter, setCounter] = useState(0);
   const [isCounter, setIsCounter] = useState(0);
   let [inputValue, setInputValue] = useState(0);
-  
 
   const inputOnChange = (e) => {
     setInputValue(Number(e.target.value));
@@ -34,44 +33,35 @@ function Wrapper() {
 
   return (
     <>
-    <div className="container-main">
-    <div className="container">
-        <h1 className="heading">COUNTER APP</h1>
-        <p className="para">Enter a number</p>
-      
-        <input className="input"
-          type="number"
-          name="number"
-          placeholder="Enter..."
-          onChange={inputOnChange}
-        ></input>
+      <div className="container-main">
+        <div className="container">
+          <h1 className="heading">COUNTER APP</h1>
+          <p className="para">Enter a number</p>
 
-        {isCounter === 0 ? (
-          <></>
-        ) : (
-          <div>
-            <Counter counter={counter} />
+          <input
+            className="input"
+            type="number"
+            name="number"
+            placeholder="Enter..."
+            onChange={inputOnChange}
+          ></input>
+
+          {isCounter === 0 ? (
+            <></>
+          ) : (
+            <div>
+              <Counter counter={counter} />
+            </div>
+          )}
+          <div className="button">
+            <button onClick={() => startCounter()}>START</button>
+            <button onClick={() => stopCounter()}>STOP</button>
+
+            <button onClick={() => deleteCounter()}>DELETE</button>
           </div>
-        )}
-  <div className="button">
-  <button  onClick={() => startCounter()}>
-          START
-        </button>
-        <button onClick={() => stopCounter()}>
-          STOP
-        </button>
-
-        <button onClick={() => deleteCounter()}>
-          DELETE
-        </button>
-  </div>
-        
+        </div>
       </div>
-    </div>
-      
     </>
-
-    
   );
 }
 
