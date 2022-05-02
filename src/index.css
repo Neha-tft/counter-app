@@ -81,7 +81,7 @@ button:hover {
 .display {
   border: 0px solid rgb(12, 12, 12);
   /* background-color: rgb(233, 240, 242); */
-
+color: white;
   padding: 10px;
   font-size: 4rem;
   font-weight: 900;
